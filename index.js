@@ -8,7 +8,7 @@ const dice = {
     isRoundCompleted: false,
 
     roll() {
-        let count = Math.ceil(Math.random() * 6);
+        let count = this.randomCount();
 
         if(this.isRoundCompleted) this.resetScore();
         if(this.score[this.eligibleUnit] === undefined) 
@@ -46,6 +46,10 @@ const dice = {
     resetScore() {
         this.score = {}
         this.round++ 
+    },
+
+    randomCount() {
+        return Math.ceil(Math.random() * 6)
     }
 }
 
